@@ -126,8 +126,16 @@
             <label for="name">Full Name : ሙሉ ስም</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-            <label for="id_number">FIN Number : ልዩ ቁጥርዎን ያስገቡ </label>
-            <input type="text" id="id_number" name="id_number" placeholder="Enter your FIN number" required>
+            <label for="id_number">FIN Number : ልዩ ቁጥርዎን ያስገቡ</label>
+            <input 
+                type="text" 
+                id="id_number" 
+                name="id_number" 
+                placeholder="Enter your FIN number (1234-5678-9101)" 
+                pattern="\d{4}-\d{4}-\d{4}" 
+                title="ID number must be in the format 1234-5678-9101" 
+                required
+            >
 
             <label for="pdf">Upload PDF : ፋይል ያስገቡ</label>
             <input type="file" id="pdf" name="pdf" accept=".pdf" required>
@@ -150,6 +158,13 @@
             const name = document.getElementById('name').value;
             const idNumber = document.getElementById('id_number').value;
             const pdf = document.getElementById('pdf').files[0];
+
+            // Validate ID number format
+            const idNumberPattern = /^\d{4}-\d{4}-\d{4}$/;
+            if (!idNumberPattern.test(idNumber)) {
+                alert('ID number must be in the format 1234-5678-9101.');
+                return;
+            }
 
             if (!pdf || pdf.type !== 'application/pdf') {
                 alert('Please upload a valid PDF file.');
