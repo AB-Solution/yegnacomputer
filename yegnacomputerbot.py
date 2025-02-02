@@ -8,13 +8,6 @@ WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 port = int(os.environ.get("PORT", 5000))  # Get the port (5000 is for local)
 app.run(host='0.0.0.0', port=port)  # Correct: 0.0.0.0 and the port variable
 
-# For python-telegram-bot:
-await application.updater.start_webhook(
-    listen="0.0.0.0",
-    port=port,  # Use the 'port' variable!
-    webhook_url_path="https://yegnacomputer.onrender.com"
-)
-
 # Dictionary to store user details
 user_data = {}
 
