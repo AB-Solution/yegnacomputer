@@ -1,8 +1,9 @@
 import telebot
+import os
 
-# Replace 'YOUR_API_TOKEN' with your bot token
-API_TOKEN = '7315167423:AAG0lF19zbCxYAnW7deuDo5a3Fu0xt8FPMU'
-bot = telebot.TeleBot(API_TOKEN)
+# Get the Telegram Bot Token from Render's environment variables
+API_TOKEN = os.getenv('7315167423:AAG0lF19zbCxYAnW7deuDo5a3Fu0xt8FPMU')
+bot = telebot.TeleBot(AAG0lF19zbCxYAnW7deuDo5a3Fu0xt8FPMU)
 
 # Dictionary to store user details
 user_data = {}
@@ -63,5 +64,6 @@ def handle_pdf(message):
         bot.reply_to(message, f"An error occurred: {e}")
 
 # Run the bot
-print("Yegna Computer Bot is running...")
-bot.infinity_polling()
+if __name__ == "__main__":
+    print("Yegna Computer Bot is running...")
+    bot.infinity_polling()
