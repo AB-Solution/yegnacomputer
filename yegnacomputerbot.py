@@ -2,7 +2,7 @@ import telebot
 import os
 
 # Get the Telegram Bot Token from Render's environment variables
-API_TOKEN = os.getenv('7315167423:AAG0lF19zbCxYAnW7deuDo5a3Fu0xt8FPMU')
+API_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
 
 # Dictionary to store user details
