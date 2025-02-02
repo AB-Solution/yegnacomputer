@@ -4,6 +4,7 @@ import os
 # Get the Telegram Bot Token from Render's environment variables
 API_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
+WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 
 # Dictionary to store user details
 user_data = {}
