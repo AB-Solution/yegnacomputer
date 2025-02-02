@@ -12,7 +12,7 @@ app.run(host='0.0.0.0', port=port)  # Correct: 0.0.0.0 and the port variable
 await application.updater.start_webhook(
     listen="0.0.0.0",
     port=port,  # Use the 'port' variable!
-    webhook_url_path=""
+    webhook_url_path="https://yegnacomputer.onrender.com"
 )
 
 # Dictionary to store user details
