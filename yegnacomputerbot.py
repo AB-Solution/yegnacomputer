@@ -5,8 +5,6 @@ import os
 API_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 bot = telebot.TeleBot(API_TOKEN)
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
-port = int(os.environ.get("PORT", 5000))  # Get the port (5000 is for local)
-app.run(host='0.0.0.0', port=port)  # Correct: 0.0.0.0 and the port variable
 
 # Dictionary to store user details
 user_data = {}
